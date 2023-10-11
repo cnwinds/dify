@@ -79,6 +79,7 @@ const ModelPage = () => {
       config.replicate,
       config.huggingface_hub,
       config.zhipuai,
+      config.mokaai,
       config.spark,
       config.minimax,
       config.tongyi,
@@ -93,6 +94,7 @@ const ModelPage = () => {
     modelList = [
       config.huggingface_hub,
       config.zhipuai,
+      config.mokaai,
       config.spark,
       config.minimax,
       config.azure_openai,
