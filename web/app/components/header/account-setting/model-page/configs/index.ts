@@ -15,6 +15,7 @@ import zhipuai from './zhipuai'
 import baichuan from './baichuan'
 import cohere from './cohere'
 import jina from './jina'
+import mokaai from './mokaai'
 
 export default {
   openai,
@@ -34,4 +35,5 @@ export default {
   baichuan,
   cohere,
   jina,
+  mokaai,
 }
