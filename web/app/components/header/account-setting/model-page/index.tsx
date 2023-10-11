@@ -79,7 +79,11 @@ const ModelPage = () => {
       config.replicate,
       config.huggingface_hub,
       config.zhipuai,
+<<<<<<< HEAD
       config.baichuan,
+=======
+      config.mokaai,
+>>>>>>> 004e6169 (feat: add mokaai option)
       config.spark,
       config.minimax,
       config.tongyi,
@@ -94,7 +98,11 @@ const ModelPage = () => {
     modelList = [
       config.huggingface_hub,
       config.zhipuai,
+<<<<<<< HEAD
       config.baichuan,
+=======
+      config.mokaai,
+>>>>>>> 004e6169 (feat: add mokaai option)
       config.spark,
       config.minimax,
       config.azure_openai,

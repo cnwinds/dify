@@ -12,7 +12,11 @@ import xinference from './xinference'
 import openllm from './openllm'
 import localai from './localai'
 import zhipuai from './zhipuai'
+<<<<<<< HEAD
 import baichuan from './baichuan'
+=======
+import mokaai from './mokaai'
+>>>>>>> 004e6169 (feat: add mokaai option)
 
 export default {
   openai,
@@ -29,5 +33,9 @@ export default {
   openllm,
   localai,
   zhipuai,
+<<<<<<< HEAD
   baichuan,
+=======
+  mokaai,
+>>>>>>> 004e6169 (feat: add mokaai option)
 }
