@@ -24,16 +24,40 @@ class WenxinProvider(BaseModelProvider):
         if model_type == ModelType.TEXT_GENERATION:
             return [
                 {
-                    'id': 'ernie-bot',
+                    'id': 'completions',
                     'name': 'ERNIE-Bot',
                 },
                 {
-                    'id': 'ernie-bot-turbo',
+                    'id': 'eb-instant',
                     'name': 'ERNIE-Bot-turbo',
                 },
                 {
-                    'id': 'bloomz-7b',
+                    'id': 'bloomz_7b1',
                     'name': 'BLOOMZ-7B',
+                },
+                {
+                    'id': 'qianfan_bloomz_7b_compressed',
+                    'name': 'QianFan-BLOOMZ-7B-compressed',
+                },
+                {
+                    'id': 'llama_2_7b',
+                    'name': 'LLAMA-2-7B',
+                },
+                {
+                    'id': 'llama_2_13b',
+                    'name': 'LLAMA-2-13B',
+                },
+                {
+                    'id': 'llama_2_70b',
+                    'name': 'LLAMA-2-70B',
+                },
+                {
+                    'id': 'qianfan_chinese_llama_2_7b',
+                    'name': 'QianFan-Chinese-LLAMA-2-7B',
+                },
+                {
+                    'id': 'chatglm2_6b_32k',
+                    'name': 'ChatGLM2-6B-32k',
                 }
             ]
         else:
@@ -66,7 +90,7 @@ class WenxinProvider(BaseModelProvider):
             'ernie-bot-turbo': 11200,
         }
 
-        if model_name in ['ernie-bot', 'ernie-bot-turbo']:
+        if model_name in ['completions', 'eb-instant']:
             return ModelKwargsRules(
                 temperature=KwargRule[float](min=0.01, max=1, default=0.95, precision=2),
                 top_p=KwargRule[float](min=0.01, max=1, default=0.8, precision=2),

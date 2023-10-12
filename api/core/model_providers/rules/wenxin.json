@@ -5,19 +5,55 @@
     "system_config": null,
     "model_flexibility": "fixed",
     "price_config": {
-        "ernie-bot": {
+        "completions": {
             "prompt": "0.012",
             "completion": "0.012",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "ernie-bot-turbo": {
+        "eb-instant": {
             "prompt": "0.008",
             "completion": "0.008",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "bloomz-7b": {
+        "bloomz_7b1": {
+            "prompt": "0.006",
+            "completion": "0.006",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "qianfan_bloomz_7b_compressed": {
+            "prompt": "0.006",
+            "completion": "0.006",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "llama_2_7b": {
+            "prompt": "0.006",
+            "completion": "0.006",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "llama_2_13b": {
+            "prompt": "0.008",
+            "completion": "0.008",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "llama_2_70b": {
+            "prompt": "0.044",
+            "completion": "0.044",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "qianfan_chinese_llama_2_7b": {
+            "prompt": "0.006",
+            "completion": "0.006",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "chatglm2_6b_32k": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",

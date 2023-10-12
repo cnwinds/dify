@@ -60,22 +60,18 @@ class _WenxinEndpointClient(BaseModel):
         if 'model' not in request:
             raise ValueError(f"Wenxin Model name is required")
 
-        model_url_map = {
-            'ernie-bot': 'completions',
-            'ernie-bot-turbo': 'eb-instant',
-            'bloomz-7b': 'bloomz_7b1',
-        }
-
         stream = 'stream' in request and request['stream']
 
         access_token = self.get_access_token()
-        api_url = f"{self.base_url}{model_url_map[request['model']]}?access_token={access_token}"
+        api_url = f"{self.base_url}{request['model']}?access_token={access_token}"
 
         headers = {"Content-Type": "application/json"}
+        print("===========>post1", api_url, request)
         response = requests.post(api_url,
                                  headers=headers,
                                  json=request,
                                  stream=stream)
+        print("===========>response", response)
         if not response.ok:
             raise ValueError(f"Wenxin HTTP {response.status_code} error: {response.text}")
 
@@ -104,7 +100,7 @@ class Wenxin(LLM):
     """
 
     _client: _WenxinEndpointClient = PrivateAttr()
-    model: str = "ernie-bot"
+    model: str = "completions"
     """Model name to use."""
     temperature: float = 0.7
     """A non-negative float that tunes the degree of randomness in generation."""
