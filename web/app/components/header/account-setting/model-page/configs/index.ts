@@ -17,7 +17,7 @@ import cohere from './cohere'
 import jina from './jina'
 import mokaai from './mokaai'
 
-export default {
+const providers = {
   openai,
   anthropic,
   azure_openai,
@@ -37,3 +37,5 @@ export default {
   jina,
   mokaai,
 }
+
+export default providers
