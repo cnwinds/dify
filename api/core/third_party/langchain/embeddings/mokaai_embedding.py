@@ -15,7 +15,6 @@ class MokaAIEmbeddings(BaseModel, Embeddings):
     
     @root_validator()
     def validate_environment(cls, values: Dict) -> Dict:
-        print(values)
         if values["client"] is None:
             m = values["model"]
             values["client"] = SentenceTransformer('moka-ai/'+m)

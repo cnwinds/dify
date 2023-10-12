@@ -25,3 +25,10 @@ class MokaAIEmbedding(BaseEmbedding):
             return LLMBadRequestError(f"MokaAI embedding: {str(ex)}")
         else:
             return ex
+        
+    def get_num_tokens(self, text: str) -> int:
+        # 使用简单版的计算token方法。
+        if len(text) == 0:
+            return 0
+
+        return len(text)*2

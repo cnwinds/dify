@@ -20,3 +20,10 @@ class ZhipuAIEmbedding(BaseEmbedding):
 
     def handle_exceptions(self, ex: Exception) -> Exception:
         return LLMBadRequestError(f"ZhipuAI embedding: {str(ex)}")
+    
+    def get_num_tokens(self, text: str) -> int:
+        # 使用简单版的计算token方法。
+        if len(text) == 0:
+            return 0
+
+        return len(text)*2
