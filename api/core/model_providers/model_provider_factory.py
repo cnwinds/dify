@@ -78,6 +78,9 @@ class ModelProviderFactory:
         elif provider_name == 'jina':
             from core.model_providers.providers.jina_provider import JinaProvider
             return JinaProvider
+        elif provider_name == 'mokaai':
+            from core.model_providers.providers.mokaai_provider import MokaAIProvider
+            return MokaAIProvider
         else:
             raise NotImplementedError
 

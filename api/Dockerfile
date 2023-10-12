@@ -36,6 +36,7 @@ COPY . /app/api/
 
 RUN python -c "from transformers import GPT2TokenizerFast; GPT2TokenizerFast.from_pretrained('gpt2')"
 ENV TRANSFORMERS_OFFLINE true
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('moka-ai/m3e-base')"
 
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

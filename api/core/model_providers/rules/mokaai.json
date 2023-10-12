@@ -1,0 +1,30 @@
+{
+    "support_provider_types": [
+        "system",
+        "custom"
+    ],
+    "system_config": {
+        "supported_quota_types": [
+            "free"
+        ],
+        "quota_unit": "tokens"
+    },
+    "model_flexibility": "fixed",
+    "price_config": {
+        "m3e-small": {
+            "completion": "0",
+            "unit": "0",
+            "currency": "RMB"
+        },
+        "m3e-base": {
+            "completion": "0",
+            "unit": "0",
+            "currency": "RMB"
+        },
+        "m3e-large": {
+            "completion": "0",
+            "unit": "0",
+            "currency": "RMB"
+        }
+    }
+}
