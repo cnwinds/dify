@@ -19,18 +19,18 @@ class MokaAIProvider(BaseModelProvider):
     def _get_fixed_model_list(self, model_type: ModelType) -> list[dict]:
         if model_type == ModelType.EMBEDDINGS:
             return [
-                {
-                    'id': 'm3e-small',
-                    'name': 'm3e-small',
-                },
+                # {
+                #     'id': 'm3e-small',
+                #     'name': 'm3e-small',
+                # },
                 {
                     'id': 'm3e-base',
                     'name': 'm3e-base',
                 },
-                {
-                    'id': 'm3e-large',
-                    'name': 'm3e-large',
-                }
+                # {
+                #     'id': 'm3e-large',
+                #     'name': 'm3e-large',
+                # }
             ]
         else:
             return []
