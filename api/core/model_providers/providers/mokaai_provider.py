@@ -49,7 +49,7 @@ class MokaAIProvider(BaseModelProvider):
     @classmethod
     def is_provider_credentials_valid_or_raise(cls, credentials: dict):
         model = MokaAIEmbeddings(
-            model="m3e-small",
+            model="m3e-base",
         )
         model.embed_query("ping")
 
