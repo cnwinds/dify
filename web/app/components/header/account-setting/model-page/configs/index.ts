@@ -15,7 +15,7 @@ import zhipuai from './zhipuai'
 import baichuan from './baichuan'
 import mokaai from './mokaai'
 
-export default {
+const providers = {
   openai,
   anthropic,
   azure_openai,
@@ -33,3 +33,5 @@ export default {
   baichuan,
   mokaai,
 }
+
+export default providers
