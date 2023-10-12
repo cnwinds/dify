@@ -32,17 +32,48 @@ class WenxinProvider(BaseModelProvider):
                 },
                 {
                     'id': 'ernie-bot',
+                    'id': 'completions',
                     'name': 'ERNIE-Bot',
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-                    'id': 'ernie-bot-turbo',
+                    'id': 'eb-instant',
                     'name': 'ERNIE-Bot-turbo',
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-                    'id': 'bloomz-7b',
+                    'id': 'bloomz_7b1',
                     'name': 'BLOOMZ-7B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'qianfan_bloomz_7b_compressed',
+                    'name': 'QianFan-BLOOMZ-7B-compressed',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama_2_7b',
+                    'name': 'LLAMA-2-7B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama_2_13b',
+                    'name': 'LLAMA-2-13B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama_2_70b',
+                    'name': 'LLAMA-2-70B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'qianfan_chinese_llama_2_7b',
+                    'name': 'QianFan-Chinese-LLAMA-2-7B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'chatglm2_6b_32k',
+                    'name': 'ChatGLM2-6B-32k',
                     'mode': ModelMode.CHAT.value,
                 }
             ]

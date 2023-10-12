@@ -77,10 +77,12 @@ class _WenxinEndpointClient(BaseModel):
         del request['model']
 
         headers = {"Content-Type": "application/json"}
+        print("===========>post1", api_url, request)
         response = requests.post(api_url,
                                  headers=headers,
                                  json=request,
                                  stream=stream)
+        print("===========>response", response)
         if not response.ok:
             raise ValueError(f"Wenxin HTTP {response.status_code} error: {response.text}")
 
@@ -108,7 +110,7 @@ class Wenxin(BaseChatModel):
         return True
 
     _client: _WenxinEndpointClient = PrivateAttr()
-    model: str = "ernie-bot"
+    model: str = "completions"
     """Model name to use."""
     temperature: float = 0.7
     """A non-negative float that tunes the degree of randomness in generation."""
