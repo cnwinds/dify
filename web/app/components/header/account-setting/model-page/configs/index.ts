@@ -14,9 +14,13 @@ import localai from './localai'
 import zhipuai from './zhipuai'
 <<<<<<< HEAD
 import baichuan from './baichuan'
+<<<<<<< HEAD
 =======
 import mokaai from './mokaai'
 >>>>>>> 004e6169 (feat: add mokaai option)
+=======
+import mokaai from './mokaai'
+>>>>>>> 884e32a4ec057f27fe50ec59ad039e98b5e4d38a
 
 export default {
   openai,
@@ -35,7 +39,11 @@ export default {
   zhipuai,
 <<<<<<< HEAD
   baichuan,
+<<<<<<< HEAD
 =======
   mokaai,
 >>>>>>> 004e6169 (feat: add mokaai option)
+=======
+  mokaai,
+>>>>>>> 884e32a4ec057f27fe50ec59ad039e98b5e4d38a
 }
