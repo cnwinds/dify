@@ -11,7 +11,12 @@
     },
     "model_flexibility": "fixed",
     "price_config": {
-        "m3e-base": {
+        "bge-base-zh-v1.5": {
+            "completion": "0",
+            "unit": "0",
+            "currency": "RMB"
+        },
+        "bge-large-zh-v1.5": {
             "completion": "0",
             "unit": "0",
             "currency": "RMB"

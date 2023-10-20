@@ -14,7 +14,6 @@ import localai from './localai'
 import zhipuai from './zhipuai'
 import baichuan from './baichuan'
 import mokaai from './mokaai'
-import baai from './baai'
 
 const providers = {
   openai,
@@ -33,7 +32,6 @@ const providers = {
   zhipuai,
   baichuan,
   mokaai,
-  baai,
 }
 
 export default providers

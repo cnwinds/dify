@@ -7,7 +7,7 @@ from langchain.utils import get_from_dict_or_env
 
 from sentence_transformers import SentenceTransformer
 
-class MokaAIEmbeddings(BaseModel, Embeddings):
+class BAAIEmbeddings(BaseModel, Embeddings):
 
     client: Any
     model: str
@@ -16,7 +16,7 @@ class MokaAIEmbeddings(BaseModel, Embeddings):
     def validate_environment(cls, values: Dict) -> Dict:
         if values["client"] is None:
             m = values["model"]
-            values["client"] = SentenceTransformer('moka-ai/'+m)
+            values["client"] = SentenceTransformer('BAAI/'+m)
         return values
 
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
