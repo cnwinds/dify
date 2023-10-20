@@ -16,7 +16,6 @@ import baichuan from './baichuan'
 import cohere from './cohere'
 import jina from './jina'
 import mokaai from './mokaai'
-import baai from './baai'
 
 const providers = {
   openai,
@@ -37,7 +36,6 @@ const providers = {
   cohere,
   jina,
   mokaai,
-  baai,
 }
 
 export default providers

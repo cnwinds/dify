@@ -4,15 +4,15 @@ from core.model_providers.models.base import BaseProviderModel
 from core.model_providers.models.entity.model_params import ModelKwargsRules, ModelType, ModelMode
 from core.model_providers.providers.base import BaseModelProvider
 
-from core.model_providers.models.embedding.mokaai_embedding import MokaAIEmbedding
-from core.third_party.langchain.embeddings.mokaai_embedding import MokaAIEmbeddings
+from core.model_providers.models.embedding.baai_embedding import BAAIEmbedding
+from core.third_party.langchain.embeddings.baai_embedding import BAAIEmbeddings
 
 
-class MokaAIProvider(BaseModelProvider):
+class BAAIProvider(BaseModelProvider):
 
     @property
     def provider_name(self):
-        return 'mokaai'
+        return 'baai'
     
     def _get_text_generation_model_mode(self, model_name) -> str:
         return ModelMode.COMPLETION.value
@@ -21,8 +21,8 @@ class MokaAIProvider(BaseModelProvider):
         if model_type == ModelType.EMBEDDINGS:
             return [
                 {
-                    'id': 'm3e-base',
-                    'name': 'm3e-base',
+                    'id': 'bge-base-zh-v1.5',
+                    'name': 'bge-base-zh-v1.5',
                 }
             ]
         else:
@@ -30,7 +30,7 @@ class MokaAIProvider(BaseModelProvider):
 
     def get_model_class(self, model_type: ModelType) -> Type[BaseProviderModel]:
         if model_type == ModelType.EMBEDDINGS:
-            model_class = MokaAIEmbedding
+            model_class = BAAIEmbedding
         else:
             raise NotImplementedError
 
@@ -41,8 +41,8 @@ class MokaAIProvider(BaseModelProvider):
 
     @classmethod
     def is_provider_credentials_valid_or_raise(cls, credentials: dict):
-        model = MokaAIEmbeddings(
-            model='m3e-base',
+        model = BAAIEmbeddings(
+            model='bge-base-zh-v1.5',
         )
         model.embed_query("ping")
 
