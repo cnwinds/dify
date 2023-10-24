@@ -77,12 +77,10 @@ class _WenxinEndpointClient(BaseModel):
         del request['model']
 
         headers = {"Content-Type": "application/json"}
-        print("===========>post1", api_url, request)
         response = requests.post(api_url,
                                  headers=headers,
                                  json=request,
                                  stream=stream)
-        print("===========>response", response)
         if not response.ok:
             raise ValueError(f"Wenxin HTTP {response.status_code} error: {response.text}")
 
