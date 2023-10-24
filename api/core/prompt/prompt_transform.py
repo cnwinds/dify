@@ -213,14 +213,15 @@ class PromptTransform:
             else:
                 prompt_inputs['#histories#'] = ''
 
-    def _append_chat_histories(self, memory: BaseChatMemory, prompt_messages: list[PromptMessage], model_instance: BaseLLM) -> None:
+
+    def _prepend_chat_histories(self, memory: BaseChatMemory, prompt_messages: list[PromptMessage], model_instance: BaseLLM) -> None:
         if memory:
             rest_tokens = self._calculate_rest_token(prompt_messages, model_instance)
 
             memory.human_prefix = MessageType.USER.value
             memory.ai_prefix = MessageType.ASSISTANT.value
             histories = self._get_history_messages_list_from_memory(memory, rest_tokens)
-            prompt_messages.extend(histories)
+            prompt_messages[:0] = histories
 
     def _calculate_rest_token(self, prompt_messages: BaseMessage, model_instance: BaseLLM) -> int:
         rest_tokens = 2000
@@ -293,10 +294,10 @@ class PromptTransform:
             prompt = self._format_prompt(prompt_template, prompt_inputs)
 
             prompt_messages.append(PromptMessage(type = MessageType(prompt_item['role']) ,content=prompt))
-        
-        self._append_chat_histories(memory, prompt_messages, model_instance)
 
         prompt_messages.append(PromptMessage(type = MessageType.USER ,content=query))
+
+        self._prepend_chat_histories(memory, prompt_messages, model_instance)
 
         return prompt_messages
 
