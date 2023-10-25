@@ -19,10 +19,11 @@ class SparkLLMClient:
     def __init__(self, model_name: str, app_id: str, api_key: str, api_secret: str, api_domain: Optional[str] = None):
 
         domain = 'spark-api.xf-yun.com' if not api_domain else api_domain
-        api_version = 'v2.1' if model_name == 'spark-v2' else 'v1.1'
-
-        self.chat_domain = 'generalv2' if model_name == 'spark-v2' else 'general'
-        self.api_base = f"wss://{domain}/{api_version}/chat"
+        model_api_version = { "spark-v1": ["v1.1", "general"], "spark-v2": ["v2.1","generalv2"], "spark-v3": ["v3.1","generalv3"]}
+        if model_name not in model_api_version:
+            raise Exception(f"{model_name} is not supported")
+        self.chat_domain = model_api_version[model_name][1]
+        self.api_base = f"wss://{domain}/{model_api_version[model_name][0]}/chat"
         self.app_id = app_id
         self.ws_url = self.create_url(
             urlparse(self.api_base).netloc,

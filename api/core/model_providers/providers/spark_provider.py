@@ -36,6 +36,11 @@ class SparkProvider(BaseModelProvider):
                     'id': 'spark-v2',
                     'name': 'Spark V2.0',
                     'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'spark-v3',
+                    'name': 'Spark V3.0',
+                    'mode': ModelMode.CHAT.value,
                 }
             ]
         else:
@@ -71,7 +76,7 @@ class SparkProvider(BaseModelProvider):
             top_p=KwargRule[float](enabled=False),
             presence_penalty=KwargRule[float](enabled=False),
             frequency_penalty=KwargRule[float](enabled=False),
-            max_tokens=KwargRule[int](min=10, max=4096, default=2048, precision=0),
+            max_tokens=KwargRule[int](min=10, max=8192, default=2048, precision=0),
         )
 
     @classmethod
