@@ -17,49 +17,55 @@
             "unit": "0.001",
             "currency": "RMB"
         },
-        "eb-instant": {
+        "ernie-bot-turbo": {
             "prompt": "0.008",
             "completion": "0.008",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "bloomz_7b1": {
+        "bloomz-7b": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "qianfan_bloomz_7b_compressed": {
+        "qianfan-bloomz-7b-compressed": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "llama_2_7b": {
+        "llama-2-7b-chat": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "llama_2_13b": {
+        "llama-2-13b-chat": {
             "prompt": "0.008",
             "completion": "0.008",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "llama_2_70b": {
+        "llama-2-70b-chat": {
             "prompt": "0.044",
             "completion": "0.044",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "qianfan_chinese_llama_2_7b": {
+        "qianfan-chinese-llama-2-7b": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",
             "currency": "RMB"
         },
-        "chatglm2_6b_32k": {
+        "chatglm2-6B-32K": {
+            "prompt": "0.006",
+            "completion": "0.006",
+            "unit": "0.001",
+            "currency": "RMB"
+        },
+        "aquilachat-7b": {
             "prompt": "0.006",
             "completion": "0.006",
             "unit": "0.001",

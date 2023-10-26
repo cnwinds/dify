@@ -36,13 +36,48 @@ class WenxinProvider(BaseModelProvider):
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-                    'id': 'eb-instant',
+                    'id': 'ernie-bot-turbo',
                     'name': 'ERNIE-Bot-turbo',
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-                    'id': 'bloomz_7b1',
+                    'id': 'bloomz-7b',
                     'name': 'BLOOMZ-7B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'qianfan-bloomz-7b-compressed',
+                    'name': 'Qianfan-BLOOMZ-7B-compressed',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama-2-7b-chat',
+                    'name': 'Llama-2-7b-chat',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama-2-13b-chat',
+                    'name': 'Llama-2-13b-chat',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'llama-2-70b-chat',
+                    'name': 'Llama-2-70b-chat',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'qianfan-chinese-llama-2-7b',
+                    'name': 'Qianfan-Chinese-Llama-2-7B',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'chatglm2-6B-32K',
+                    'name': 'ChatGLM2-6B-32K',
+                    'mode': ModelMode.CHAT.value,
+                },
+                {
+                    'id': 'aquilachat-7b',
+                    'name': 'AquilaChat-7B',
                     'mode': ModelMode.CHAT.value,
                 }
             ]
@@ -77,10 +112,18 @@ class WenxinProvider(BaseModelProvider):
         model_max_tokens = {
             'ernie-bot-4': 4800,
             'ernie-bot': 4800,
-            'ernie-bot-turbo': 11200,
+            'ernie-bot-turbo': 7000,
+            'bloomz-7b': 3000,
+            'qianfan-bloomz-7b-compressed': 3000,
+            'llama-2-7b-chat': 3000,
+            'llama-2-13b-chat': 3000,
+            'llama-2-70b-chat': 3000,
+            'qianfan-chinese-llama-2-7b': 3000,
+            'chatglm2-6B-32K': 32768,
+            'aquilachat-7b': 3000,
         }
 
-        if model_name in ['ernie-bot-4', 'ernie-bot', 'ernie-bot-turbo']:
+        if model_name in model_max_tokens:
             return ModelKwargsRules(
                 temperature=KwargRule[float](min=0.01, max=1, default=0.95, precision=2),
                 top_p=KwargRule[float](min=0.01, max=1, default=0.8, precision=2),

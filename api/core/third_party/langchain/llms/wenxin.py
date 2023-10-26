@@ -68,6 +68,13 @@ class _WenxinEndpointClient(BaseModel):
             'ernie-bot': 'completions',
             'ernie-bot-turbo': 'eb-instant',
             'bloomz-7b': 'bloomz_7b1',
+            'qianfan-bloomz-7b-compressed': 'qianfan_bloomz_7b_compressed',
+            'llama-2-7b-chat': 'llama_2_7b',
+            'llama-2-13b-chat': 'llama_2_13b',
+            'llama-2-70b-chat': 'llama_2_70b',
+            'qianfan-chinese-llama-2-7b': 'qianfan_chinese_llama_2_7b',
+            'chatglm2-6B-32K': 'chatglm2_6b_32k',
+            'aquilachat-7b': 'aquilachat_7b',
         }
 
         stream = 'stream' in request and request['stream']
@@ -108,7 +115,7 @@ class Wenxin(BaseChatModel):
         return True
 
     _client: _WenxinEndpointClient = PrivateAttr()
-    model: str = "completions"
+    model: str = "ernie-bot"
     """Model name to use."""
     temperature: float = 0.7
     """A non-negative float that tunes the degree of randomness in generation."""
