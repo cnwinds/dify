@@ -115,7 +115,7 @@ class Wenxin(BaseChatModel):
         return True
 
     _client: _WenxinEndpointClient = PrivateAttr()
-    model: str = "ernie-bot"
+    model: str = "ernie-bot-4"
     """Model name to use."""
     temperature: float = 0.7
     """A non-negative float that tunes the degree of randomness in generation."""
