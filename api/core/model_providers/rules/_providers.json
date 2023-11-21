@@ -15,5 +15,6 @@
   "openllm",
   "localai",
   "mokaai",
-  "baai"
+  "baai",
+  "cohere"
 ]

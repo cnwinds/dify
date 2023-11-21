@@ -78,6 +78,9 @@ class ModelProviderFactory:
         elif provider_name == 'baai':
             from core.model_providers.providers.baai_provider import BAAIProvider
             return BAAIProvider
+        elif provider_name == 'cohere':
+            from core.model_providers.providers.cohere_provider import CohereProvider
+            return CohereProvider
         else:
             raise NotImplementedError
 

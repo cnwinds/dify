@@ -1,8 +1,11 @@
+import fetchStream from 'fetch-readablestream'
 import { API_PREFIX, IS_CE_EDITION, PUBLIC_API_PREFIX } from '@/config'
 import Toast from '@/app/components/base/toast'
 import type { MessageEnd, MessageReplace, ThoughtItem } from '@/app/components/app/chat/type'
+import { isSupportNativeFetchStream } from '@/utils/stream'
 
 const TIME_OUT = 100000
+const supportNativeFetchStream = isSupportNativeFetchStream()
 
 const ContentType = {
   json: 'application/json',
@@ -220,6 +223,9 @@ const baseFetch = <T>(
   if (body && bodyStringify)
     options.body = JSON.stringify(body)
 
+  // for those do not support native fetch stream, we use fetch-readablestream as polyfill
+  const doFetch = supportNativeFetchStream ? globalThis.fetch : fetchStream
+
   // Handle timeout
   return Promise.race([
     new Promise((resolve, reject) => {
@@ -228,7 +234,7 @@ const baseFetch = <T>(
       }, TIME_OUT)
     }),
     new Promise((resolve, reject) => {
-      globalThis.fetch(urlWithPrefix, options as RequestInit)
+      doFetch(urlWithPrefix, options as RequestInit)
         .then((res) => {
           const resClone = res.clone()
           // Error handler
@@ -297,12 +303,30 @@ const baseFetch = <T>(
   ]) as Promise<T>
 }
 
-export const upload = (options: any): Promise<any> => {
+export const upload = (options: any, isPublicAPI?: boolean): Promise<any> => {
+  const urlPrefix = isPublicAPI ? PUBLIC_API_PREFIX : API_PREFIX
+  let token = ''
+  if (isPublicAPI) {
+    const sharedToken = globalThis.location.pathname.split('/').slice(-1)[0]
+    const accessToken = localStorage.getItem('token') || JSON.stringify({ [sharedToken]: '' })
+    let accessTokenJson = { [sharedToken]: '' }
+    try {
+      accessTokenJson = JSON.parse(accessToken)
+    }
+    catch (e) {
+
+    }
+    token = accessTokenJson[sharedToken]
+  }
+  else {
+    const accessToken = localStorage.getItem('console_token') || ''
+    token = accessToken
+  }
   const defaultOptions = {
     method: 'POST',
-    url: `${API_PREFIX}/files/upload`,
+    url: `${urlPrefix}/files/upload`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('console_token') || ''}`,
+      Authorization: `Bearer ${token}`,
     },
     data: {},
   }
