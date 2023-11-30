@@ -24,34 +24,12 @@ class SparkLLMClient:
             if model_name == 'spark-v3':
                 endpoint = 'multimodal'
 
-<<<<<<< HEAD
-        model_api_configs = {
-            'spark': {
-                'version': 'v1.1',
-                'chat_domain': 'general'
-            },
-            'spark-v2': {
-                'version': 'v2.1',
-                'chat_domain': 'generalv2'
-            },
-            'spark-v3': {
-                'version': 'v3.1',
-                'chat_domain': 'generalv3'
-            }
-        }
-
-        api_version = model_api_configs[model_name]['version']
-
-        self.chat_domain = model_api_configs[model_name]['chat_domain']
-        self.api_base = f"wss://{domain}/{api_version}/{endpoint}"
-=======
         domain = 'spark-api.xf-yun.com' if not api_domain else api_domain
-        model_api_version = { "spark": ["v1.1", "general"], "spark-v2": ["v2.1","generalv2"], "spark-v3": ["v3.1","generalv3"]}
+        model_api_version = { "spark-v1": ["v1.1", "general"], "spark-v2": ["v2.1","generalv2"], "spark-v3": ["v3.1","generalv3"]}
         if model_name not in model_api_version:
             raise Exception(f"{model_name} is not supported")
         self.chat_domain = model_api_version[model_name][1]
         self.api_base = f"wss://{domain}/{model_api_version[model_name][0]}/chat"
->>>>>>> 58fe7f8a (* 增加 sparkv3)
         self.app_id = app_id
         self.ws_url = self.create_url(
             urlparse(self.api_base).netloc,

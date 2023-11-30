@@ -38,13 +38,8 @@ class SparkProvider(BaseModelProvider):
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-<<<<<<< HEAD
                     'id': 'spark',
                     'name': 'Spark V1.5',
-=======
-                    'id': 'spark-v3',
-                    'name': 'Spark V3.0',
->>>>>>> 58fe7f8a (* 增加 sparkv3)
                     'mode': ModelMode.CHAT.value,
                 }
             ]

@@ -47,35 +47,6 @@ class WenxinProvider(BaseModelProvider):
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-<<<<<<< HEAD
-                    'id': 'qianfan_bloomz_7b_compressed',
-                    'name': 'QianFan-BLOOMZ-7B-compressed',
-                    'mode': ModelMode.CHAT.value,
-                },
-                {
-                    'id': 'llama_2_7b',
-                    'name': 'LLAMA-2-7B',
-                    'mode': ModelMode.CHAT.value,
-                },
-                {
-                    'id': 'llama_2_13b',
-                    'name': 'LLAMA-2-13B',
-                    'mode': ModelMode.CHAT.value,
-                },
-                {
-                    'id': 'llama_2_70b',
-                    'name': 'LLAMA-2-70B',
-                    'mode': ModelMode.CHAT.value,
-                },
-                {
-                    'id': 'qianfan_chinese_llama_2_7b',
-                    'name': 'QianFan-Chinese-LLAMA-2-7B',
-                    'mode': ModelMode.CHAT.value,
-                },
-                {
-                    'id': 'chatglm2_6b_32k',
-                    'name': 'ChatGLM2-6B-32k',
-=======
                     'id': 'qianfan-bloomz-7b-compressed',
                     'name': 'Qianfan-BLOOMZ-7B-compressed',
                     'mode': ModelMode.CHAT.value,
@@ -108,7 +79,6 @@ class WenxinProvider(BaseModelProvider):
                 {
                     'id': 'aquilachat-7b',
                     'name': 'AquilaChat-7B',
->>>>>>> f9b1fd62 (* 增加文心一言能支持的模型)
                     'mode': ModelMode.CHAT.value,
                 }
             ]
