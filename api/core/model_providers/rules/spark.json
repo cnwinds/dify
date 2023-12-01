@@ -14,7 +14,7 @@
         "text-generation"
     ],
     "price_config": {
-        "spark": {
+        "spark-v1": {
             "prompt": "0.18",
             "completion": "0.18",
             "unit": "0.0001",

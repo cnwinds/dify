@@ -13,9 +13,9 @@ import openllm from './openllm'
 import localai from './localai'
 import zhipuai from './zhipuai'
 import baichuan from './baichuan'
+import mokaai from './mokaai'
 import cohere from './cohere'
 import jina from './jina'
-import mokaai from './mokaai'
 
 const providers = {
   openai,
@@ -33,9 +33,9 @@ const providers = {
   localai,
   zhipuai,
   baichuan,
+  mokaai,
   cohere,
   jina,
-  mokaai,
 }
 
 export default providers

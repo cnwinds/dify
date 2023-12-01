@@ -38,7 +38,7 @@ class SparkProvider(BaseModelProvider):
                     'mode': ModelMode.CHAT.value,
                 },
                 {
-                    'id': 'spark',
+                    'id': 'spark-v1',
                     'name': 'Spark V1.5',
                     'mode': ModelMode.CHAT.value,
                 }
@@ -135,7 +135,7 @@ class SparkProvider(BaseModelProvider):
                 # try spark v1.5 if v2.1 failed
                 try:
                     chat_llm = ChatSpark(
-                        model_name='spark',
+                        model_name='spark-v1',
                         max_tokens=10,
                         temperature=0.01,
                         **credential_kwargs

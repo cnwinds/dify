@@ -72,6 +72,12 @@ class ModelProviderFactory:
         elif provider_name == 'localai':
             from core.model_providers.providers.localai_provider import LocalAIProvider
             return LocalAIProvider
+        elif provider_name == 'mokaai':
+            from core.model_providers.providers.mokaai_provider import MokaAIProvider
+            return MokaAIProvider
+        elif provider_name == 'baai':
+            from core.model_providers.providers.baai_provider import BAAIProvider
+            return BAAIProvider
         elif provider_name == 'cohere':
             from core.model_providers.providers.cohere_provider import CohereProvider
             return CohereProvider

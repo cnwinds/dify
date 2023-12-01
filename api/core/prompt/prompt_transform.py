@@ -364,7 +364,7 @@ class PromptTransform:
 
             prompt_messages.append(PromptMessage(type = MessageType(prompt_item['role']) ,content=prompt))
 
-        prompt_messages.append(PromptMessage(type=MessageType.USER, content=query, files=files))
+        prompt_messages.append(PromptMessage(type = MessageType.USER, content=query, files=files))
 
         self._prepend_chat_histories(memory, prompt_messages, model_instance)
 

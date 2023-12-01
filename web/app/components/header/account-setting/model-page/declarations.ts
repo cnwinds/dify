@@ -45,6 +45,7 @@ export enum ProviderEnum {
   'localai' = 'localai',
   'zhipuai' = 'zhipuai',
   'baichuan' = 'baichuan',
+  'mokaai' = 'mokaai',
   'cohere' = 'cohere',
   'jina' = 'jina',
   'mokaai' = 'mokaai',
