@@ -175,10 +175,9 @@ class PromptTransform:
         prompt = re.sub(r'<\|.*?\|>', '', prompt)
 
         prompt_messages.append(PromptMessage(type=MessageType.SYSTEM, content=prompt))
-
-        self._append_chat_histories(memory, prompt_messages, model_instance)
-
         prompt_messages.append(PromptMessage(type=MessageType.USER, content=query, files=files))
+
+        self._prepend_chat_histories(memory, prompt_messages, model_instance)
 
         return prompt_messages
 
